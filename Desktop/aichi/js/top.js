@@ -1,21 +1,21 @@
-$(function(){
+$(function () {
   $('.slider-wrap').slick({
-    autoplay: true, // 自動でスクロール
-    autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
-    speed: 5000, // スライドが流れる速度を設定
-    cssEase: "linear", // スライドの流れ方を等速に設定
-    slidesToShow: 6, // 表示するスライドの数
-    swipe: false, // 操作による切り替えはさせない
-    arrows: false, // 矢印非表示
-    pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
-    pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,     // 待ち時間ゼロ
+    speed: 12000,         // 流れる速さ（長いほどゆっくり）
+    cssEase: 'linear',    // 等速
+    variableWidth: true,  // 幅はCSSで決める
+    slidesToScroll: 1,
+    arrows: false,
+    swipe: false,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    touchMove: false,
+    // 速度だけブレークポイントで微調整してもOK
     responsive: [
-      {
-        breakpoint: 750,
-        settings: {
-          slidesToShow: 5, // 画面幅750px以下でスライド3枚表示
-        }
-      }
+      { breakpoint: 1024, settings: { speed: 10000 } },
+      { breakpoint: 640,  settings: { speed: 9000 } }
     ]
   });
 });
